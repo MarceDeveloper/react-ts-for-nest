@@ -1,0 +1,27 @@
+/* LoginPage.css */
+.login-page {
+    --color-primary: #1dbcd8; /* Azul */
+    --color-secondary: #6b21a8; /* Púrpura */
+    --color-accent: #2563eb; /* Azul claro */
+    --color-background: rgba(255, 255, 255, 0.2);
+    --color-text: #ffffff; /* Blanco */
+    --color-border: #d1d5db; /* Gris */
+    --color-neon: rgba(0, 128, 255, 0.3); /* Neón */
+  }
+  
+  .neon-border {
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--color-neon), 0 0 20px var(--color-neon), 0 0 30px var(--color-neon);
+    animation: neonGlow 1.5s infinite alternate;
+  }
+  
+  @keyframes neonGlow {
+    from {
+      box-shadow: 0 0 10px var(--color-neon), 0 0 20px var(--color-neon), 0 0 30px var(--color-neon);
+    }
+    to {
+      box-shadow: 0 0 15px var(--color-neon), 0 0 30px var(--color-neon), 0 0 45px var(--color-neon);
+    }
+  }
+  

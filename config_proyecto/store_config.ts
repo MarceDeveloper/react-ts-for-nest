@@ -1,0 +1,1 @@
+export const name_store = "my_web_template"

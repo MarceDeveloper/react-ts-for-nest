@@ -1,0 +1,49 @@
+/* ProductCard.css */
+ .product-card-container {
+    --color-primary: #1d4ed8; /* Azul */
+    --color-secondary: #6b21a8; /* Púrpura */
+    --color-text: #ffffff; /* Blanco */
+  }
+ .product-card-container {
+    perspective: 1000px;
+  }
+  
+  .product-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 1s;
+  }
+  
+  .product-card:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-front {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+  }
+  
+  .card-back {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    transform: rotateY(180deg);
+  }
+  
+  
+  

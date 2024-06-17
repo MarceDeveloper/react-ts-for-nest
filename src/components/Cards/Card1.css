@@ -1,0 +1,115 @@
+/* Card1.css */
+.card1-container {
+    perspective: 1000px;
+    --color-primary: #1d4ed8; /* Azul */
+    --color-secondary: #6b21a8; /* Púrpura */
+    --color-accent: #2563eb; /* Azul claro */
+    --color-text: #ffffff; /* Blanco */
+    --color-background: rgba(255, 255, 255, 0.2);
+    --color-border: #d1d5db; /* Gris */
+  }
+  
+  .card1 {
+    position: relative;
+    width: 300px;
+    max-width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 1s;
+  }
+  
+  .card1:hover:not(.no-hover) {
+    transform: rotateY(180deg);
+  }
+  
+  .card1.show-back {
+    transform: rotateY(180deg);
+  }
+  
+  .card1-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Asegura que el contenido no se desborde */
+  }
+  
+  .card1-front {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+  }
+  
+  .card1-back {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    transform: rotateY(180deg);
+  }
+  
+  .card1-content {
+    transform: translateZ(50px) scale(0.9); /* Ajustado para mejor encaje */
+    transition: transform 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card1.show-back .card1-content {
+    transform: translateZ(50px) scale(1);
+  }
+  
+  .card1-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card1-description {
+    font-size: 1rem;
+  }
+  
+  .card1-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 4px solid var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent); /* Ajustado para mejor encaje */
+  }
+  
+
+  
+ 
+  
+  .card1-toggle {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  .card1-toggle:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  /* Ocultar los botones en pantallas grandes */
+  @media (min-width: 640px) {
+    .card1-toggle {
+      display: none;
+    }
+  }
+  
